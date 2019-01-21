@@ -1,0 +1,140 @@
+#!/usr/bin/python
+
+'''
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+'''
+
+import argparse
+import sys
+
+sys.path[0] = '/usr/share/litdb'
+#sys.path[0] = './'
+import _litdb
+
+DBG = False
+
+parser = argparse.ArgumentParser(description='litdb')
+parser.add_argument('-c',
+                    help="clean",
+                    action="store_true",
+                    dest='c_val',
+                    default=False)
+parser.add_argument('-x',
+                    help="export",
+                    action="store",
+                    dest='x_val',
+                    default=None)
+parser.add_argument('-f',
+                    help="folder",
+                    action="store",
+                    dest='f_val',
+                    default=None)
+parser.add_argument('-vf',
+                    help="view folders",
+                    action="store_true",
+                    dest='vf_val',
+                    default=False)
+parser.add_argument('-y',
+                    help="head",
+                    action="store",
+                    dest='y_val',
+                    default=None)
+parser.add_argument('-v',
+                    help="verbose",
+                    action="store_true",
+                    dest='v_val',
+                    default=False)
+parser.add_argument('-i',
+                    help="import",
+                    action="store",
+                    dest='i_val',
+                    default=None)
+parser.add_argument('-d',
+                    help="delete",
+                    action="store_true",
+                    dest='d_val',
+                    default=False)
+parser.add_argument('-ds',
+                    help="datastore",
+                    action="store",
+                    dest='ds_val',
+                    default=None)
+parser.add_argument('-g',
+                    help="empty htm",
+                    action="store_true",
+                    dest='g_val',
+                    default=False)
+parser.add_argument('-n',
+                    help="numbered",
+                    action="store_true",
+                    dest='n_val',
+                    default=False)
+parser.add_argument('-l',
+                    help="low",
+                    action="store_true",
+                    dest='l_val',
+                    default=False)
+parser.add_argument('-r',
+                    help="reload",
+                    action="store_true",
+                    dest='r_val',
+                    default=False)
+parser.add_argument('-s', help="strip",
+                    action="store_true",
+                    dest='s_val',
+                    default=False)
+parser.add_argument('-sh',
+                    help="shuffle",
+                    action="store_true",
+                    dest='sh_val',
+                    default=False)
+parser.add_argument('-sr',
+                    help="soft reset",
+                    action="store_true",
+                    dest='sr_val',
+                    default=False)
+parser.add_argument('-t',
+                    help="timestamp",
+                    action="store",
+                    dest='t_val',
+                    default=None)
+parser.add_argument('-o',
+                    help="output",
+                    action="store_true",
+                    dest='o_val',
+                    default=False)
+parser.add_argument('-z',
+                    help="sort",
+                    action="store_true",
+                    dest='z_val',
+                    default=False)
+results = parser.parse_args()
+
+if DBG:
+    print "c:"+ str(results.c_val)
+    print "x:"+ str(results.x_val)
+    print "f:"+ str(results.f_val)
+    print "vf:"+ str(results.vf_val)
+    print "y:"+ str(results.y_val)
+    print "v:"+ str(results.v_val)
+    #print "i:"+ str(results.i_val)
+    print "d:"+ str(results.d_val)
+    print "ds:"+ str(results.d_val)
+    print "n:"+ str(results.n_val)
+    print "l:"+ str(results.l_val)
+    #print "r:"+ str(results.r_val)
+    print "s:"+ str(results.s_val)
+    #print "sh:"+ str(results.sh_val)
+    #print "sr:"+ str(results.sr_val)
+    print "t:"+ str(results.t_val)
+    print "o:"+ str(results.o_val)
+    #print "z:"+ str(results.z_val)
+
+_litdb.run(results)
+
+
+
+
+

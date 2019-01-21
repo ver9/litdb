@@ -1,0 +1,15 @@
+Source: litdb
+Section: python
+Priority: optional
+Maintainer: ver9, <ver9@protonmail.com>
+Build-Depends: debhelper (>= 7),
+               python (>= 2.6.6-3~)
+Standards-Version: 3.9.2
+X-Python-Version: >= 2.6
+
+Package: litdb
+Architecture: all
+Section: python
+Depends: python (>= 2.6.6-3~), python-bs4, libsqlite3-0
+Description: sql lite commandline bookmarks manager
+ 
